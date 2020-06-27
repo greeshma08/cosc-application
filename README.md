@@ -4,7 +4,7 @@ TEACHER TIME TABLE MANAGEMENT SYSYTEM:
 
 The REST API is deployed to heroku
 
-Link:https://team2api.herokuapp.com/
+Link:https://cosc-drive-team2.herokuapp.com/
 
 Everybody can use the below endpoints to access the tables in the database
 
