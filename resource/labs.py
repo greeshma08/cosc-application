@@ -15,16 +15,18 @@ class Labs(Resource):
     def post(self):
         parser=reqparse.RequestParser()
         parser.add_argument('user_id',type=int,required=True,help="User_id name cannot be left blank!")
-        parser.add_argument('room_id',type=int, required=True,help="lab number cannot be left blank!")
+        parser.add_argument('room_id',type=int, required=True,help="room number cannot be left blank!")
         parser.add_argument('purpose',type=str,required=True,help="purpose can't be left blank!")
         data=parser.parse_args()
         try:
-            query(f"""INSERT INTO timetable.REQUESTS(user_id, room_id, purpose, req_status)
+            query(f"""INSERT INTO timetable.requests(user_id, room_id, purpose, req_status)
                                 VALUES({data['user_id']},{data['room_id']},
                                             '{data['purpose']}','pending')""")
         except:
             return {"message": "An error occurred."}, 500
         return {"message": "successfully added request."}, 201
+
+        
 
     @jwt_required
     def put(self):
@@ -57,4 +59,3 @@ class AddLab(Resource):
             except:
                 return{"message":"There is an error connecting to the db"},500
             return {"message":"Sucessfully inserted"},201
-            
