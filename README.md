@@ -1,11 +1,9 @@
-# team2api
-cosc-app-api
+# cosc application
 TEACHER TIME TABLE MANAGEMENT SYSYTEM:
 
 The REST API is deployed to heroku
 
-Link:https://cosc-drive-team2.herokuapp.com/
-
+Link:https://internship-team-2.herokuapp.com/
 Everybody can use the below endpoints to access the tables in the database
 
 1)/ulogin - takes a JSON object with 'username' and 'password' and gives back JWT if exists in User table. The JWT shall be used to access all the end points. For all the endpoints an Authorization Header should be included with value 'Bearer '.
@@ -45,3 +43,11 @@ def getPeriod(currentHour): if currentHour==9: return 1 elif currentHour==10: re
 16)/lab(GET) - gets the information related to labs by checking their 'availability'=0
 
 17)/lab(POST)-POST into labs table.
+
+18)/getroom(GET): Gives all the details present in sch table ,so that the user can directly see the faculty details easily
+
+19)/invalidreq(PUT): It puts the msg like "invalid Request" ."user_id" is must.
+
+20)/addsem(POST): It creates a new entry in the db with the following attributes -"seminar_name","sem_no","availability"."seminar_name","sem_no","availability" are must.
+
+21)/addlab(POST): It creates a new entry in the db with the following attribtes -     "lab_no","building_no","capacity","availibility"."lab_no","building_no","capacity","availibility" are must.
