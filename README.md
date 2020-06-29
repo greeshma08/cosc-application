@@ -4,6 +4,7 @@ TEACHER TIME TABLE MANAGEMENT SYSYTEM:
 The REST API is deployed to heroku
 
 Link:https://internship-team-2.herokuapp.com/
+
 Everybody can use the below endpoints to access the tables in the database
 
 1)/ulogin - takes a JSON object with 'username' and 'password' and gives back JWT if exists in User table. The JWT shall be used to access all the end points. For all the endpoints an Authorization Header should be included with value 'Bearer '.
